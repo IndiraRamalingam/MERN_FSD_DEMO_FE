@@ -1,7 +1,8 @@
 import axios from "axios";
 import getToken from '../utils/authUtils'
 
-const baseURL='http://localhost:3001/api/users'
+const baseURL='https://mern-fsd-demo-be.onrender.com/api/users'
+//const baseURL='http://localhost:3001/api/users'
 
 console.log(baseURL)
 const authInstance= axios.create({

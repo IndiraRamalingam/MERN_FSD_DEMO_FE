@@ -1,11 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import auth from '../services/auth';
 
 function ForgotPassword() {
-  const [mail,setMail] = useState('');
+  const [email,setEmail] = useState('');
 
   const handleForgotpassword =(event) =>{
     event.preventDefault();
-
+    console.log("Clicked"); 
+    auth.forgotpassword({email})
+    console.log(email)
   }
   
   return (
@@ -14,9 +17,9 @@ function ForgotPassword() {
       <br/><br/>
          <input 
          type='email'
-         value={mail}
+         value={email}
          placeholder='Email ID'
-         onChange={(event) => setMail(event.target.value) }
+         onChange={(event) => setEmail(event.target.value) }
         /><br/><br/>
         <button type="submit">Send Email</button>
       </form>

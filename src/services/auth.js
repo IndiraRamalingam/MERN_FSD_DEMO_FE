@@ -1,5 +1,6 @@
 import axios from "axios";
 import instance from "./instance";
+import { useParams } from "react-router-dom";
 
 const signup =async(credentials) =>{
     try
@@ -28,4 +29,31 @@ const signin = async(credentials)=>{
     }
 }
 
-export default {signup,signin};
+const forgotpassword=async(credentials)=>{
+    try{
+        
+        const response=await instance.authInstance.post('/forgot_password',credentials);
+        console.log(response.data.message);
+        console.log(response.data)
+    }catch(error)
+    {
+        console.log("Mailed Failed to Send")
+    }
+}
+
+const resetpassword = async(credentials)=>{
+    try{
+        console.log(credentials.token+"  "+credentials.password)
+        const response=await instance.authInstance.post('/reset_password/:token',credentials);   
+    //    const response=await instance.authInstance.post(`/reset_password/${credentials.id}/${credentials.token}`,credentials);
+        console.log(response.data.message);
+        console.log(response.data);
+
+    }
+    catch(error)
+    {
+        console.log("Reset Password Failed ", error);
+    }
+}
+
+export default {signup,signin,forgotpassword,resetpassword};

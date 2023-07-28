@@ -13,11 +13,11 @@ function App() {
       <BrowserRouter>
         <NavBar />
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/signup" element={<SignUp />} />
-            <Route path="/signin" element={<SignIn />} />
-            <Route path="/forgot_password" element={<ForgotPassword />} />
-            <Route path="/reset_password/:token" element={<ResetPassword />} />
+            <Route path='/' element={<Home />} />
+            <Route path='/signup' element={<SignUp />} />
+            <Route path='/signin' element={<SignIn />} />
+            <Route path='/forgot_password' element={<ForgotPassword />} />
+            <Route path='/reset_password/:token' element={<ResetPassword />} />
           </Routes>
       </BrowserRouter>
     </div>

@@ -30,7 +30,7 @@ function SignIn() {
          placeholder='Password'
          onChange={(event) => setPassword(event.target.value) }
         /><br/><br/>
-        <button type="submit">Sign Up</button>
+        <button type="submit">Sign In</button>
        </form>
        <br></br>
        <Link to='/forgot_password'>Forgot Password</Link>

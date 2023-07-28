@@ -10,7 +10,7 @@ import ResetPassword from './components/ResetPassword';
 function App() {
   return (
     <div>     
-      <BrowserRouter>
+      <Router>
         <NavBar />
           <Routes>
             <Route path='/' element={<Home />} />
@@ -19,7 +19,7 @@ function App() {
             <Route path='/forgot_password' element={<ForgotPassword />} />
             <Route path='/reset_password/:token' element={<ResetPassword />} />
           </Routes>
-      </BrowserRouter>
+      </Router>
     </div>
   )
 }
